@@ -48,9 +48,7 @@
         "pip-services3-swagger-nodex": "^1.0.0"
     },
     "devDependencies": {
-        "@types/async": "^2.0.0",
         "@types/chai": "*",
-        "@types/lodash": "^4.0.0",
         "@types/mocha": "*",
         "@types/mongodb": "^2.1.38",
         "@types/node": "*",
