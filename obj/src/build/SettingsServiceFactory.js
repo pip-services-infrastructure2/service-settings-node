@@ -7,7 +7,7 @@ const SettingsMongoDbPersistence_1 = require("../persistence/SettingsMongoDbPers
 const SettingsFilePersistence_1 = require("../persistence/SettingsFilePersistence");
 const SettingsMemoryPersistence_1 = require("../persistence/SettingsMemoryPersistence");
 const SettingsController_1 = require("../logic/SettingsController");
-const SettingsHttpServiceV1_1 = require("../services/version1/SettingsHttpServiceV1");
+const SettingsCommandableHttpServiceV1_1 = require("../services/version1/SettingsCommandableHttpServiceV1");
 const SettingsCommandableGrpcServiceV1_1 = require("../services/version1/SettingsCommandableGrpcServiceV1");
 const SettingsGrpcServiceV1_1 = require("../services/version1/SettingsGrpcServiceV1");
 class SettingsServiceFactory extends pip_services3_components_nodex_1.Factory {
@@ -17,7 +17,7 @@ class SettingsServiceFactory extends pip_services3_components_nodex_1.Factory {
         this.registerAsType(SettingsServiceFactory.FilePersistenceDescriptor, SettingsFilePersistence_1.SettingsFilePersistence);
         this.registerAsType(SettingsServiceFactory.MongoDbPersistenceDescriptor, SettingsMongoDbPersistence_1.SettingsMongoDbPersistence);
         this.registerAsType(SettingsServiceFactory.ControllerDescriptor, SettingsController_1.SettingsController);
-        this.registerAsType(SettingsServiceFactory.HttpServiceDescriptor, SettingsHttpServiceV1_1.SettingsHttpServiceV1);
+        this.registerAsType(SettingsServiceFactory.CmdHttpServiceDescriptor, SettingsCommandableHttpServiceV1_1.SettingsCommandableHttpServiceV1);
         this.registerAsType(SettingsServiceFactory.CommandableGrpcServiceDescriptor, SettingsCommandableGrpcServiceV1_1.SettingsCommandableGrpcServiceV1);
         this.registerAsType(SettingsServiceFactory.GrpcServiceDescriptor, SettingsGrpcServiceV1_1.SettingsGrpcServiceV1);
     }
@@ -28,7 +28,7 @@ SettingsServiceFactory.MemoryPersistenceDescriptor = new pip_services3_commons_n
 SettingsServiceFactory.FilePersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "persistence", "file", "*", "1.0");
 SettingsServiceFactory.MongoDbPersistenceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "persistence", "mongodb", "*", "1.0");
 SettingsServiceFactory.ControllerDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "controller", "default", "*", "1.0");
-SettingsServiceFactory.HttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "service", "http", "*", "1.0");
+SettingsServiceFactory.CmdHttpServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "service", "commandable-http", "*", "1.0");
 SettingsServiceFactory.CommandableGrpcServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "service", "commandable-grpc", "*", "1.0");
 SettingsServiceFactory.GrpcServiceDescriptor = new pip_services3_commons_nodex_1.Descriptor("service-settings", "service", "grpc", "*", "1.0");
 //# sourceMappingURL=SettingsServiceFactory.js.map

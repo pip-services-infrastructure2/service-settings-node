@@ -7,7 +7,7 @@ import { References } from 'pip-services3-commons-nodex';
 
 import { SettingsMemoryPersistence } from '../../../src/persistence/SettingsMemoryPersistence';
 import { SettingsController } from '../../../src/logic/SettingsController';
-import { SettingsHttpServiceV1 } from '../../../src/services/version1/SettingsHttpServiceV1';
+import { SettingsCommandableHttpServiceV1 } from '../../../src/services/version1/SettingsCommandableHttpServiceV1';
 
 let restConfig = ConfigParams.fromTuples(
     "connection.protocol", "http",
@@ -15,8 +15,8 @@ let restConfig = ConfigParams.fromTuples(
     "connection.port", 3000
 );
 
-suite('SettingsHttpServiceV1', ()=> {
-    let service: SettingsHttpServiceV1;
+suite('SettingsCommandableHttpServiceV1', ()=> {
+    let service: SettingsCommandableHttpServiceV1;
 
     let rest: any;
 
@@ -24,13 +24,13 @@ suite('SettingsHttpServiceV1', ()=> {
         let persistence = new SettingsMemoryPersistence();
         let controller = new SettingsController();
 
-        service = new SettingsHttpServiceV1();
+        service = new SettingsCommandableHttpServiceV1();
         service.configure(restConfig);
 
         let references: References = References.fromTuples(
             new Descriptor('service-settings', 'persistence', 'memory', 'default', '1.0'), persistence,
             new Descriptor('service-settings', 'controller', 'default', 'default', '1.0'), controller,
-            new Descriptor('service-settings', 'service', 'http', 'default', '1.0'), service
+            new Descriptor('service-settings', 'service', 'commandable-http', 'default', '1.0'), service
         );
         controller.setReferences(references);
         service.setReferences(references);
