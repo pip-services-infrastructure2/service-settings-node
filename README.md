@@ -76,7 +76,7 @@ Example of microservice configuration
 
 - descriptor: "service-settings:controller:default:default:1.0"
 
-- descriptor: "service-settings:service:http:default:1.0"
+- descriptor: "service-settings:service:commandable-http:default:1.0"
   connection:
     protocol: "http"
     host: "0.0.0.0"
