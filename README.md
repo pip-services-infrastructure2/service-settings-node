@@ -5,8 +5,8 @@ It manages system settings separated by individual sections.
 Each section contains multiple key-value parameter pairs. 
 
 The microservice currently supports the following deployment options:
-* Deployment platforms: Standalone Process, Seneca
-* External APIs: HTTP/REST, Seneca
+* Deployment platforms: Standalone Process
+* External APIs: HTTP/REST
 * Persistence: Flat Files, MongoDB
 
 This microservice has no dependencies on other microservices.
@@ -21,11 +21,10 @@ This microservice has no dependencies on other microservices.
   - [Node.js SDK](https://github.com/pip-services-infrastructure2/client-settings-node)
 * Communication Protocols
   - [HTTP Version 1](doc/HttpProtocolV1.md)
-  - [Seneca Version 1](doc/SenecaProtocolV1.md)
 
 ## Contract
 
-Logical contract of the microservice is presented below. For physical implementation (HTTP/REST, Thrift, Seneca, Lambda, etc.),
+Logical contract of the microservice is presented below. For physical implementation (HTTP/REST, Thrift, Lambda, etc.),
 please, refer to documentation of the specific protocol.
 
 ```typescript
